@@ -1,0 +1,11 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+BanglaSpeechRecognition/BanglaSpeechRecognition.py
+BanglaSpeechRecognition/__init__.py
+BanglaSpeechRecognition.egg-info/PKG-INFO
+BanglaSpeechRecognition.egg-info/SOURCES.txt
+BanglaSpeechRecognition.egg-info/dependency_links.txt
+BanglaSpeechRecognition.egg-info/requires.txt
+BanglaSpeechRecognition.egg-info/top_level.txt
