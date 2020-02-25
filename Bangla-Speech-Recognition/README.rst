@@ -37,7 +37,9 @@ Example:
 ----------
 
 import BanglaSpeechRecognition as bsr
+
 string = bsr.STT_Bangla()
+
 print(string)
 
 
