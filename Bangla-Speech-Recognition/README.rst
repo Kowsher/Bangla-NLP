@@ -1,5 +1,5 @@
 
-BanglaSpeechRecognition
+Bangla Speech Recognition
 =================
 .. image:: https://img.shields.io/pypi/v/SpeechRecognition.svg
     :target: https://pypi.python.org/pypi/SpeechRecognition/
@@ -22,7 +22,8 @@ BanglaSpeechRecognition
     :alt: Continuous Integration Test Results
 
     
-## Bangla_Speech_Recognition  Developed by [Md. Kowsher](https://sites.google.com/view/kowsher)
+
+`Developed <https://sites.google.com/view/kowsher>`__
 
 **Quickstart:** ``pip install BanglaSpeechRecognition``
 
