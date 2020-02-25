@@ -24,7 +24,7 @@ Bangla Speech Recognition
     
 
 
-`Developed by Md. Kowsher<https://sites.google.com/view/kowsher>`__
+`Developed <https://sites.google.com/view/kowsher>`__
 
 
 **Quickstart:** ``pip install BanglaSpeechRecognition``
