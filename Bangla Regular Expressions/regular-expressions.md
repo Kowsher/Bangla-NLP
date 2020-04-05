@@ -141,7 +141,30 @@ target = 'আমাদের দেশ বাংলাদেশ'
 outcome = bre.word_count(target)
 print(outcome)
 ```
+## Find the list of vowel characters of a sentece
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ'
+outcome = bre.vowel_get(target)
+print(outcome)
+```
 
+## Find the list of consonant characters of a sentece
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ'
+outcome = bre.con_get(target)
+print(outcome)
+```
+
+##  Find the list of punctuation characters of a sentece
+
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ'
+outcome = bre.punc_count(target)
+print(outcome)
+```
 
 ```python
 import bre
