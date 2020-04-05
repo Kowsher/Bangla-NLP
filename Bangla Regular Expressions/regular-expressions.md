@@ -1,13 +1,13 @@
-Python Regular Expressions
+Python Bangla Regular Expressions (BRE)
 ==========================
 
-Regular expressions are a powerful language for matching text patterns.
+Bangla Regular expressions (BRE) are a powerful language for matching text patterns.
 This page gives a basic introduction to regular expressions themselves
 sufficient for our Python exercises and shows how regular expressions
-work in Python. The Python "re" module provides regular expression
-support.
+work in Python. The Python "bre" module provides regular expression
+support for Bangla Language.
 
-In Python a regular expression search is typically written as:
+In Python a Bangla Regular Expression is typically written as:
 
 ```python
 import bre
