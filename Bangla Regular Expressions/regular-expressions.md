@@ -12,7 +12,7 @@ In Python a regular expression search is typically written as:
 ```python
 import bre
 ```
-# Match Pattern
+## Match Pattern
 
 The bre.match(pattern, target) method takes a regular expression pattern and a string
 and searches for that pattern within the string. If the search is
@@ -28,6 +28,138 @@ if outcome == True:
 else: print('Not Found')
 ```
 
+## Match Character
+match_char() function return 'True' when the pattern is founded on target sentence or false otherwise.
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ'
+char = 'আ'
+outcome = bre.match_char(char, target)
+if outcome == True:
+    print('Founded')
+else: print('Not Found')
+```
+## Find the whole sentece
+The bre.find_sent() helps to find the whole sentece in target.
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ'
+pattern = 'আমাদের দেশ'
+outcome = bre.find_sent(pattern, target)
+print(outcome)
+```
+
+## Find the all words 
+The bre.find_all() helps to find out the all matched words in target sentece and return the all match words
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ, শুধু বাংলাদেশ'
+pattern = 'বাংলাদেশ'
+outcome = bre.find_all(pattern, target)
+print(outcome)
+```
+## Split the matched word
+The bre.match_split() aids to get the matched word by spliting
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ শুধু বাংলাদেশ'
+pattern = 'বাংলাদেশ'
+outcome = bre.match_split(pattern, target)
+print(outcome)
+```
+## Search a word
+The bre.search() helps to serach a word 
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ শুধু বাংলাদেশ'
+pattern = 'বাংলাদেশ'
+outcome = bre.search(pattern, target)
+print(outcome)
+
+```
+## Split the Bangla characters
+
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ'
+outcome = bre.split_char(target)
+print(outcome)
+```
+
+## Find the length of a sentece
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ'
+outcome = bre.size(target)
+print(outcome)
+```
+## Count the number of characters of a sentece
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ'
+outcome = bre.char_count(target)
+print(outcome)
+```
+
+## Find the number of vowels of a sentece
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ'
+outcome = bre.vowel_count(target)
+print(outcome)
+```
+
+## Count the number of consonants of a sentece
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ'
+outcome = bre.con_count(target)
+print(outcome)
+```
+
+## Count the number of punctuations of a sentece
+
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ'
+outcome = bre.punc_count(target)
+print(outcome)
+```
+
+## Count the number of spaces of a sentece
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ'
+outcome = bre.space_count(target)
+print(outcome)
+```
+
+## Count the number of words of a sentece
+```python
+import bre
+target = 'আমাদের দেশ বাংলাদেশ'
+outcome = bre.word_count(target)
+print(outcome)
+```
+
+
+```python
+import bre
+```
+
+
+```python
+import bre
+```
+
+
+```python
+import bre
+```
+
+```python
+import bre
+```
 The code `match = re.search(pat, str)` stores the search result in a
 variable named `match`. Then the if-statement tests the match -- if true
 the search succeeded and `match.group()` is the matching text (e.g.
