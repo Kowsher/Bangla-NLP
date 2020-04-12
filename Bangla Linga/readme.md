@@ -14,7 +14,7 @@ In Python a Bangla Linga is typically written as:
 
 ## Usage:
 ```python
->>> from bangla-linga import gender_prediction as gp
+>>> from bangla_linga import gender_prediction as gp
 >>> gen = gp.BN_gen_pred()
 >>> gen.predict_gender("রাহাত")
 ```
