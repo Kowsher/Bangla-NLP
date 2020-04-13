@@ -4,26 +4,61 @@ BFE is a Bangla Natural Language Processing based feature extractor.
 
 
 ## Current Features
----
 
-  1. CountVectorizer
-  2. TfIdf
-  3. Word Embedding
-      * Word2Vec
-      * FastText
+  1. [CountVectorizer](#1-countvectorizer)
+  2. [TfIdf](#2-tfidf)
+  3. [Word Embedding](#3-word-embedding)
+      * [Word2Vec](#word2vec)
+      * [FastText](#fasttext)
 
 ## Installation
 ```
 pip install bfe
 ```
 ## Example
-### 3. Word Embedding
-
-### Word2Vec
-
-- **Training**
+### 1. CountVectorizer
+  - [Fit n Transform](#fit-n-ransform)
+  - Transform
+  - Get Wordset
+  
+**Fit n Transform**
 ```py
-from "package_name" import BN_Word2Vec
+from bfe import CountVectorizer
+ct = CountVectorizer()
+X = ct.fit_transform(X) # X is the word features
+#Output: the countVectorized matrix form of given features
+```
+
+**Transform**
+```py
+from bfe import CountVectorizer
+ct = CountVectorizer()
+get_mat = ct.transform("রাহাত")
+#Output: the countVectorized matrix form of given word
+```
+
+**Get Wordset**
+```py
+from bfe import CountVectorizer
+ct = CountVectorizer()
+ct.get_wordSet()
+#Output: get the raw wordset used in training model
+```
+
+### 2. TfIdf
+### 3. Word Embedding
+- ### Word2Vec
+    - Training
+    - Get Word Vector
+    - Get Similarity
+    - Get n Similar Words
+    - Get Middle Word
+    - Get Odd Words
+    - Get Similarity Plot
+
+**Training**
+```py
+from bfe import BN_Word2Vec
 #Training Against Sentences
 w2v = BN_Word2Vec(sentences=[['আমার', 'প্রিয়', 'জন্মভূমি'], ['বাংলা', 'আমার', 'মাতৃভাষা']])
 w2v.train_Word2Vec()
@@ -43,26 +78,29 @@ w2v.train_Word2Vec()
 w2v = BN_Word2Vec(corpus_path="path/data")
 w2v.train_Word2Vec(epochs=25)
 ```
+After training is done the model "w2v_model"  along with it's supportive vector files will be saved to current directory.
 
-- **Get Word Vector**
+**If you use any pretrained model, specify it while initializing BN_Word2Vec() . Otherwise no model_name is needed.**
+
+**Get Word Vector**
 ```py
-from "package_name" import BN_Word2Vec 
+from bfe import BN_Word2Vec 
 w2v = BN_Word2Vec(model_name='give the model name here')
 w2v.get_wordVector('আমার')
 ```
 
-- **Get Similarity**
+**Get Similarity**
 ```py
-from "package_name" import BN_Word2Vec 
+from bfe import BN_Word2Vec 
 w2v = BN_Word2Vec(model_name='give the model name here')
 w2v.get_similarity('ঢাকা', 'রাজধানী')
 
 #Output: 67.457879
 ```
 
-- **Get n Similar Words**
+**Get n Similar Words**
 ```py
-from "package_name" import BN_Word2Vec 
+from bfe import BN_Word2Vec 
 w2v = BN_Word2Vec(model_name='give the model name here')
 w2v.get_n_similarWord(['পদ্মা'], n=10)
 #Output: 
@@ -80,36 +118,128 @@ w2v.get_n_similarWord(['পদ্মা'], n=10)
 '''
 ```
 
-- **Get Middle Word**
+**Get Middle Word**
 
     Get the probability distribution of the center word given words list.
 ```py
-from "package_name" import BN_Word2Vec 
+from bfe import BN_Word2Vec 
 w2v = BN_Word2Vec(model_name='give the model name here')
 w2v.get_outputWord(['ঢাকায়', 'মৃত্যু'], n=2)
 
 #Output:  [("হয়েছে।',", 0.05880642), ('শ্রমিকের', 0.05639163)]
 ```
 
-- **Get Odd Words**
+**Get Odd Words**
 
     Get the most unmatched word out from given words list
 ```py
-from "package_name" import BN_Word2Vec 
+from bfe import BN_Word2Vec 
 w2v = BN_Word2Vec(model_name='give the model name here')
 w2v.get_oddWords(['চাল', 'ডাল', 'চিনি', 'আকাশ'])
 
 #Output: 'আকাশ' 
 ```
 
-- **Get Similarity Plot**
+**Get Similarity Plot**
 
     Creates a barplot of similar words with their probability 
 
 ```py
-from "package_name" import BN_Word2Vec 
+from bfe import BN_Word2Vec 
 w2v = BN_Word2Vec(model_name='give the model name here')
 w2v.get_oddWords(['চাল', 'ডাল', 'চিনি', 'আকাশ'])
+```
+
+- ### FastText
+    - Training
+    - Get Word Vector
+    - Get Similarity
+    - Get n Similar Words
+    - Get Middle Word
+    - Get Odd Words
+  
+ 
+**Training**
+```py
+from bfe import BN_FastText
+#Training Against Sentences
+ft = FastText(sentences=[['আমার', 'প্রিয়', 'জন্মভূমি'], ['বাংলা', 'আমার', 'মাতৃভাষা']])
+ft.train_fasttext()
+
+#Training Against one Dataset
+ft = FastText(corpus_file="path to data or txt file")
+ft.train_fasttext()
+
+#Training Against Multiple Dataset
+'''
+    path
+      ->data
+        ->1.txt
+        ->2.txt
+        ->3.txt
+'''
+ft = FastText(corpus_path="path/data")
+ft.train_fasttext(epochs=25)
+```
+After training is done the model "ft_model"  along with it's supportive vector files will be saved to current directory.
+
+**If you use any pretrained model, specify it while initializing BN_FastText() . Otherwise no model_name is needed.**
+
+**Get Word Vector**
+```py
+from bfe import BN_FastText 
+ft = BN_FastText(model_name='give the model name here')
+ft.get_wordVector('আমার')
+```
+
+**Get Similarity**
+```py
+from bfe import BN_FastText 
+ft = BN_FastText(model_name='give the model name here')
+ft.get_similarity('ঢাকা', 'রাজধানী')
+
+#Output: 70.56821120
+```
+
+**Get n Similar Words**
+```py
+from bfe" import BN_FastText 
+ft = BN_FastText(model_name='give the model name here')
+ft.get_n_similarWord(['পদ্মা'], n=10)
+#Output: 
+'''
+[('পদ্মায়', 0.8103810548782349),
+ ('পদ্মার', 0.794012725353241),
+ ('পদ্মানদীর', 0.7747839689254761),
+ ('পদ্মা-মেঘনার', 0.7573559284210205),
+ ('পদ্মা.', 0.7470568418502808),
+ ('‘পদ্মা', 0.7413997650146484),
+ ('পদ্মাসেতুর', 0.716225266456604),
+ ('পদ্ম', 0.7154797315597534),
+ ('পদ্মহেম', 0.6881639361381531),
+ ('পদ্মাবত', 0.6682782173156738)]
+'''
+```
+
+**Get Odd Words**
+
+    Get the most unmatched word out from given words list
+```py
+from "package_name" import BN_FastText 
+ft = BN_FastText(model_name='give the model name here')
+ft.get_oddWords(['চাল', 'ডাল', 'চিনি', 'আকাশ'])
+
+#Output: 'আকাশ' 
+```
+
+**Get Similarity Plot**
+
+    Creates a barplot of similar words with their probability 
+
+```py
+from bfe import BN_FastText 
+ft = BN_FastText(model_name='give the model name here')
+ft.get_oddWords(['চাল', 'ডাল', 'চিনি', 'আকাশ'])
 ```
 
 
