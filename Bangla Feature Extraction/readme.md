@@ -17,7 +17,7 @@ pip install bfe
 ```
 ## Example
 ### 1. CountVectorizer
-  - [Fit n Transform](#fit-n-ransform)
+  - Fit n Transform
   - Transform
   - Get Wordset
   
@@ -46,6 +46,56 @@ ct.get_wordSet()
 ```
 
 ### 2. TfIdf
+  - Fit n Transform
+  - Transform
+  - Coefficients
+  
+ **Fit n Transform**
+```py
+from bfe import TfIdfVectorizer
+k = TfIdfVectorizer()
+doc = ["কাওছার আহমেদ", "শুভ হাইদার"]
+matrix1 = k.fit_transform(doc)
+print(matrix1)
+
+'''
+Output: 
+[[0.150515 0.150515 0.       0.      ]
+ [0.       0.       0.150515 0.150515]]
+'''
+```
+**Transform**
+```py
+from bfe import TfIdfVectorizer
+k = TfIdfVectorizer()
+doc = ["আহমেদ সুমন", "কাওছার করিম"]
+matrix2 = k.transform(doc)
+print(matrix2)
+
+'''
+Output: 
+[[0.150515 0.       0.       0.      ]
+ [0.       0.150515 0.       0.      ]]
+'''
+```
+**Coefficients**
+```py
+from bfe import TfIdfVectorizer
+k = TfIdfVectorizer()
+doc = ["কাওছার আহমেদ", "শুভ হাইদার"]
+k.fit_transform(doc)
+wordset, idf = k.coefficients()
+print(wordset)
+#Output: ['আহমেদ', 'কাওছার', 'হাইদার', 'শুভ']
+
+print(idf)
+'''
+Output: 
+{'আহমেদ': 0.3010299956639812, 'কাওছার': 0.3010299956639812, 'হাইদার': 0.3010299956639812, 'শুভ': 0.3010299956639812}
+'''
+
+```
+  
 ### 3. Word Embedding
 - ### Word2Vec
     - Training
