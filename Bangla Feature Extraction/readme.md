@@ -1,4 +1,4 @@
-# Bangla Feature Extractor
+# Bangla Feature Extractor(ekushey.feature_extraction)
 
 ekushey.feature_extraction is a Bangla Natural Language Processing based feature extractor.
 
@@ -6,8 +6,9 @@ ekushey.feature_extraction is a Bangla Natural Language Processing based feature
 ## Current Features
 
   1. [CountVectorizer](#1-countvectorizer)
-  2. [TfIdf](#2-tfidf)
-  3. [Word Embedding](#3-word-embedding)
+  2. [HashVectorizer](#2-hashvectorizer)
+  3. [TfIdf](#3-tfidf)
+  4. [Word Embedding](#4-word-embedding)
       * [Word2Vec](#word2vec)
       * [FastText](#fasttext)
 
@@ -45,7 +46,42 @@ ct.get_wordSet()
 #Output: get the raw wordset used in training model
 ```
 
-### 2. TfIdf
+### 2. HashVectorizer
+  - Fit n Transform
+  - Transform
+```py
+from ekushey.feature_extraction import HashVectorizer
+corpus = [
+'আমাদের দেশ বাংলাদেশ', 'আমার বাংলা'
+]
+Vectorizer = HashVectorizer()
+n_features = 8
+X = Vectorizer.fit_transform(corpus, n_features)
+corpus_t = ["আমাদের দেশ অনেক সুন্দর"]
+Xf = Vectorizer.transform(corpus_t)
+
+print(X.shape, Xf.shape)
+print("=====================================")
+print(X)
+print("=====================================")
+print(Xf)
+```
+```
+output:
+(2, 8) (1, 8)
+=====================================
+  (0, 7)	-1.0
+  (1, 7)	-1.0
+=====================================
+  (0, 0)	0.5773502691896258
+  (0, 2)	0.5773502691896258
+  (0, 7)	-0.5773502691896258
+```
+  
+**Get Wordset**
+
+
+### 3. TfIdf
   - Fit n Transform
   - Transform
   - Coefficients
@@ -96,7 +132,7 @@ Output:
 
 ```
   
-### 3. Word Embedding
+### 4. Word Embedding
 - ### Word2Vec
     - Training
     - Get Word Vector
