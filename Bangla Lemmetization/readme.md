@@ -14,7 +14,7 @@ In Python a Bangla Linga is typically written as:
 
 ## Usage:
 ```python
->>>  from BnLemma import lemmatization
+>>>  from BnLemma import lemmatization as lm
 >>>  s = "মানুষের জীবনটা পাচ্ছেন তাই কাজে লাগানো দরকার আমাদেরকে"  
 >>>  s = lm.lemma(s)
 >>>  print(s)
