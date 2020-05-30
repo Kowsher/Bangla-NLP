@@ -366,7 +366,7 @@ ft.get_similarity_plot('চাউল', 5)
  
 **Training**
 ```py
-from ekushey.feature_extraction import BN_FastText
+from ekushey.feature_extraction import BN_GloVe
 #Training Against Sentences
 glv = BN_GloVe(sentences=[['আমার', 'প্রিয়', 'জন্মভূমি'], ['বাংলা', 'আমার', 'মাতৃভাষা'], ['বাংলা', 'আমার', 'মাতৃভাষা'], ['বাংলা', 'আমার', 'মাতৃভাষা'], ['বাংলা', 'আমার', 'মাতৃভাষা'] ])
 glv.train()
