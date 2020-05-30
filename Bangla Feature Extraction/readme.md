@@ -11,6 +11,7 @@ ekushey.feature_extraction is a Bangla Natural Language Processing based feature
   4. [Word Embedding](#4-word-embedding)
       * [Word2Vec](#word2vec)
       * [FastText](#fasttext)
+	  * [GloVe](#glove)
 
 ## Installation
 ```
