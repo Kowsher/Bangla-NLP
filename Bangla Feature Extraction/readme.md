@@ -1,6 +1,6 @@
-# Bangla Feature Extractor(ekushey.feature_extraction)
+# Bangla Feature Extractor(BnFeatureExtraction)
 
-ekushey.feature_extraction is a Bangla Natural Language Processing based feature extractor.
+BnFeatureExtraction is a Bangla Natural Language Processing based feature extractor.
 
 
 ### Feature Extraction
@@ -15,7 +15,7 @@ ekushey.feature_extraction is a Bangla Natural Language Processing based feature
 
 ## Installation
 ```
-pip install ekushey
+pip install BnFeatureExtraction
 ```
 ## Example
 ### 1. CountVectorizer
@@ -25,7 +25,7 @@ pip install ekushey
   
 **Fit n Transform**
 ```py
-from ekushey.feature_extraction import CountVectorizer
+from BnFeatureExtraction import CountVectorizer
 ct = CountVectorizer()
 X = ct.fit_transform(X) # X is the word features
 ```
@@ -36,7 +36,7 @@ the countVectorized matrix form of given features
 
 **Transform**
 ```py
-from ekushey.feature_extraction import CountVectorizer
+from BnFeatureExtraction import CountVectorizer
 ct = CountVectorizer()
 get_mat = ct.transform("রাহাত")
 ```
@@ -47,7 +47,7 @@ the countVectorized matrix form of given word
 
 **Get Wordset**
 ```py
-from ekushey.feature_extraction import CountVectorizer
+from BnFeatureExtraction import CountVectorizer
 ct = CountVectorizer()
 ct.get_wordSet()
 ```
@@ -60,7 +60,7 @@ get the raw wordset used in training model
   - Fit n Transform
   - Transform
 ```py
-from ekushey.feature_extraction import HashVectorizer
+from BnFeatureExtraction import HashVectorizer
 corpus = [
 'আমাদের দেশ বাংলাদেশ', 'আমার বাংলা'
 ]
@@ -98,7 +98,7 @@ Output:
   
  **Fit n Transform**
 ```py
-from ekushey.feature_extraction import TfIdfVectorizer
+from BnFeatureExtraction import TfIdfVectorizer
 k = TfIdfVectorizer()
 doc = ["কাওছার আহমেদ", "শুভ হাইদার"]
 matrix1 = k.fit_transform(doc)
@@ -113,7 +113,7 @@ Output:
 
 **Transform**
 ```py
-from ekushey.feature_extraction import TfIdfVectorizer
+from BnFeatureExtraction import TfIdfVectorizer
 k = TfIdfVectorizer()
 doc = ["আহমেদ সুমন", "কাওছার করিম"]
 matrix2 = k.transform(doc)
@@ -126,7 +126,7 @@ Output:
 ```
 **Coefficients**
 ```py
-from ekushey.feature_extraction import TfIdfVectorizer
+from BnFeatureExtraction import TfIdfVectorizer
 k = TfIdfVectorizer()
 doc = ["কাওছার আহমেদ", "শুভ হাইদার"]
 k.fit_transform(doc)
@@ -154,7 +154,7 @@ Output:
 
 **Training**
 ```py
-from ekushey.feature_extraction import BN_Word2Vec
+from BnFeatureExtraction import BN_Word2Vec
 #Training Against Sentences
 w2v = BN_Word2Vec(sentences=[['আমার', 'প্রিয়', 'জন্মভূমি'], ['বাংলা', 'আমার', 'মাতৃভাষা'],['আমার', 'প্রিয়', 'জন্মভূমি'], ['বাংলা', 'আমার', 'মাতৃভাষা'],['আমার', 'প্রিয়', 'জন্মভূমি'], ['বাংলা', 'আমার', 'মাতৃভাষা']])
 w2v.train()
@@ -185,14 +185,14 @@ After training is done the model "w2v_model"  along with it's supportive vector 
 
 **Get Word Vector**
 ```py
-from ekushey.feature_extraction import BN_Word2Vec 
+from BnFeatureExtraction import BN_Word2Vec 
 w2v = BN_Word2Vec(model_name='give the model name here')
 w2v.get_wordVector('আমার')
 ```
 
 **Get Similarity**
 ```py
-from ekushey.feature_extraction import BN_Word2Vec 
+from BnFeatureExtraction import BN_Word2Vec 
 w2v = BN_Word2Vec(model_name='give the model name here')
 w2v.get_similarity('ঢাকা', 'রাজধানী')
 ```
@@ -203,7 +203,7 @@ Output:
 
 **Get n Similar Words**
 ```py
-from ekushey.feature_extraction import BN_Word2Vec 
+from BnFeatureExtraction import BN_Word2Vec 
 w2v = BN_Word2Vec(model_name='give the model name here')
 w2v.get_n_similarWord(['পদ্মা'], n=10)
 ```
@@ -225,7 +225,7 @@ Output:
 
 Get the probability distribution of the center word given words list.
 ```py
-from ekushey.feature_extraction import BN_Word2Vec 
+from BnFeatureExtraction import BN_Word2Vec 
 w2v = BN_Word2Vec(model_name='give the model name here')
 w2v.get_outputWord(['ঢাকায়', 'মৃত্যু'], n=2)
 ```
@@ -238,7 +238,7 @@ Output:
 
 Get the most unmatched word out from given words list
 ```py
-from ekushey.feature_extraction import BN_Word2Vec 
+from BnFeatureExtraction import BN_Word2Vec 
 w2v = BN_Word2Vec(model_name='give the model name here')
 w2v.get_oddWords(['চাল', 'ডাল', 'চিনি', 'আকাশ'])
 ```
@@ -252,7 +252,7 @@ Output:
 Creates a barplot of similar words with their probability 
 
 ```py
-from ekushey.feature_extraction import BN_Word2Vec 
+from BnFeatureExtraction import BN_Word2Vec 
 w2v = BN_Word2Vec(model_name='give the model name here')
 w2v.get_similarity_plot('চাউল', 5)
 ```
@@ -268,7 +268,7 @@ w2v.get_similarity_plot('চাউল', 5)
  
 **Training**
 ```py
-from ekushey.feature_extraction import BN_FastText
+from BnFeatureExtraction import BN_FastText
 #Training Against Sentences
 ft = ft = BN_FastText(sentences=[['আমার', 'প্রিয়', 'জন্মভূমি'], ['বাংলা', 'আমার', 'মাতৃভাষা'], ['বাংলা', 'আমার', 'মাতৃভাষা'], ['বাংলা', 'আমার', 'মাতৃভাষা'], ['বাংলা', 'আমার', 'মাতৃভাষা'] ])
 ft.train()
@@ -299,14 +299,14 @@ After training is done the model "ft_model"  along with it's supportive vector f
 
 **Get Word Vector**
 ```py
-from ekushey.feature_extraction import BN_FastText 
+from BnFeatureExtraction import BN_FastText 
 ft = BN_FastText(model_name='give the model name here')
 ft.get_wordVector('আমার')
 ```
 
 **Get Similarity**
 ```py
-from ekushey.feature_extraction import BN_FastText 
+from BnFeatureExtraction import BN_FastText 
 ft = BN_FastText(model_name='give the model name here')
 ft.get_similarity('ঢাকা', 'রাজধানী')
 ```
@@ -317,7 +317,7 @@ Output:
 
 **Get n Similar Words**
 ```py
-from ekushey.feature_extraction" import BN_FastText 
+from BnFeatureExtraction import BN_FastText 
 ft = BN_FastText(model_name='give the model name here')
 ft.get_n_similarWord(['পদ্মা'], n=10)
 ```
@@ -340,7 +340,7 @@ Output:
 
 Get the most unmatched word out from given words list
 ```py
-from "package_name" import BN_FastText 
+from BnFeatureExtraction import BN_FastText 
 ft = BN_FastText(model_name='give the model name here')
 ft.get_oddWords(['চাল', 'ডাল', 'চিনি', 'আকাশ'])
 ```
@@ -354,7 +354,7 @@ Output:
 Creates a barplot of similar words with their probability 
 
 ```py
-from ekushey.feature_extraction import BN_FastText 
+from BnFeatureExtraction import BN_FastText 
 ft = BN_FastText(model_name='give the model name here')
 ft.get_similarity_plot('চাউল', 5)
 ```
@@ -366,7 +366,7 @@ ft.get_similarity_plot('চাউল', 5)
  
 **Training**
 ```py
-from ekushey.feature_extraction import BN_GloVe
+from BnFeatureExtraction import BN_GloVe
 #Training Against Sentences
 glv = BN_GloVe(sentences=[['আমার', 'প্রিয়', 'জন্মভূমি'], ['বাংলা', 'আমার', 'মাতৃভাষা'], ['বাংলা', 'আমার', 'মাতৃভাষা'], ['বাংলা', 'আমার', 'মাতৃভাষা'], ['বাংলা', 'আমার', 'মাতৃভাষা'] ])
 glv.train()
@@ -399,7 +399,7 @@ After training is done the model "glove_model"  along with it's supportive vecto
 
 **Get n Similar Words**
 ```py
-from ekushey.feature_extraction" import BN_GloVe 
+from BnFeatureExtraction import BN_GloVe 
 glv = BN_GloVe(model_name='give the model name here')
 glv.get_n_similarWord(['পদ্মা'], n=10)
 ```
