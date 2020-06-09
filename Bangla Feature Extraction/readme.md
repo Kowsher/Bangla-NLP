@@ -13,7 +13,7 @@ BnFeatureExtraction is a Bangla Natural Language Processing based feature extrac
       * [FastText](#fasttext)
 	  * [GloVe](#glove)
 
-## Installation
+## Installation 
 ```
 pip install BnFeatureExtraction
 ```
