@@ -86,6 +86,20 @@ outcome = bre.split_char(target)
 print(outcome)
 ```
 
+splitFmatch(pattern, string) methods helps to split string by the occurrences of given pattern.
+```python
+import bre
+outcome= bre.splitFmatch('দেশের', 'আমাদের দেশের নাম বাংলাদেশ')
+print(outcome)
+output:['আমাদের ', ' নাম বাংলাদেশ']
+```
+```python
+import bre
+outcome= bre.splitFmatch('দে', 'আমাদের')
+print(outcome)
+output:['আমা', 'র']
+```
+
 ## Find the length of a sentece
 ```python
 import bre
@@ -181,13 +195,32 @@ outcome = bre.remove_NonBnChar('আমাদের f দেশের $ নাম
 print(outcome)
 output: 'আমাদের  দেশের  নাম বাংলাদেশ'
 ```
+## replace a word or char by another word or char
 
-
+replace(pattern, replace, string) helps to search a pattern and replace with a new sub string. If the pattern is not found, string is returned unchanged.
 ```python
 import bre
+outcome= bre.replace('দেশ', 'বাংলাদেশ', 'আমার দেশ')
+print(outcome)
+output:'আমার বাংলাদেশ'
 ```
-
-
+```python
+import bre
+outcome= bre.replace('খ', 'ক', 'খাওছার')
+print(outcome)
+output:'কাওছার'
+```
+```python
+import bre
+outcome= bre.
+print(outcome)
+output:
+```
+``````python
+import bre
+outcome= bre.
+print(outcome)
+output:
 ```python
 import bre
 ```
