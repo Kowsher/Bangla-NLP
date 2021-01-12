@@ -137,6 +137,13 @@ print(outcome)
 ## Count the number of words of a sentece
 ```python
 import bre
+outcome = bre.fixed_char_count('শ', 'আমাদের দেশের নাম বাংলাদেশ')
+print(outcome)
+output: 2
+```
+## Count a specific bangla character
+```python
+import bre
 target = 'আমাদের দেশ বাংলাদেশ'
 outcome = bre.word_count(target)
 print(outcome)
@@ -166,8 +173,13 @@ outcome = bre.punc_count(target)
 print(outcome)
 ```
 
+
+## Remove non Bangla charecters
 ```python
 import bre
+outcome = bre.remove_NonBnChar('আমাদের f দেশের $ নাম বাংলাদেশ')
+print(outcome)
+output: 'আমাদের  দেশের  নাম বাংলাদেশ'
 ```
 
 
