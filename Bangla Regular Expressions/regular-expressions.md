@@ -186,6 +186,53 @@ target = 'আমাদের দেশ বাংলাদেশ'
 outcome = bre.punc_count(target)
 print(outcome)
 ```
+## bre.find_digit(pattern, target, range=False)
+find_digit() function returns a list containing all matches. search, Returns a Match object if there is a match anywhere in the string.
+if we want to find the whole numbers between a range (nub1 to nub2), we can make 'range =True' in the function. 
+bre.find_digit('{৩-১০}', target, range=True) which returns all the numbers between 3 to 10
+
+```python
+import bre
+outcome= bre.find_digit('{৩-১০}', 'আমার ১০ টাকা আছে, করিমের ৫ টাকা ১২ পয়সা ছিল', range=True)
+print(outcome)
+output: ['১০', '৫']
+```
+
+bre.find_digit('{৩-n}', target, range=True) which returns all the numbers greater than 3
+
+```python
+import bre
+outcome= bre.find_digit('{৩-n}', 'আমার ১০ টাকা আছে, করিমের ৫ টাকা ১২ পয়সা ছিল', range=True)
+print(outcome)
+output: ['১০', '৫', '১২']
+```
+
+bre.find_digit('{n-১০}', target, range=True) which returns all the number less than 10
+
+```python
+import bre
+outcome= bre.find_digit('{৩-n}', 'আমার ১০ টাকা আছে, করিমের ৫ টাকা ১২ পয়সা ছিল', range=True)
+print(outcome)
+output: ['১০', '৫']
+```
+
+bre.find_digit('{n-n}', target, range=True) returns all the numbers
+
+```python
+import bre
+outcome= bre.find_digit('{৩-n}', 'আমার ১০ টাকা আছে, করিমের ৫ টাকা ১২ পয়সা ছিল', range=True)
+print(outcome)
+output: ['১০', '৫', '১২']
+```
+
+bre.find_digit('১০', target), finds the 10 in target
+
+```python
+import bre
+outcome= bre.find_digit('{৩-n}', 'আমার ১০ টাকা আছে, করিমের ৫ টাকা ১২ পয়সা ছিল', range=True)
+print(outcome)
+output: ['১০']
+```
 
 
 ## Remove non Bangla charecters
