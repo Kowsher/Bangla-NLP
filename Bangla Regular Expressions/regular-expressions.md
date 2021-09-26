@@ -615,7 +615,7 @@ in the brackets).
 Substitution (optional)
 -----------------------
 
-The `re.sub(pat, replacement, str)` function searches for all the
+The `re.sub(pat, replacement, str)` function s earches for all the
 instances of pattern in the given string, and replaces them. The
 replacement string can include `'\1'`, `'\2'` which refer to the text from
 `group(1)`, `group(2)`, and so on from the original matching text.
